@@ -1,0 +1,2 @@
+watchdog.c:5:6:MX_IWDG_Init	8	static
+watchdog.c:13:6:Watchdog_Refresh	8	static

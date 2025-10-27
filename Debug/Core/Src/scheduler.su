@@ -1,0 +1,13 @@
+scheduler.c:16:13:list_push_free	16	static
+scheduler.c:27:16:list_pop_free	16	static
+scheduler.c:36:13:ready_push	16	static
+scheduler.c:42:13:delta_remove	24	static
+scheduler.c:59:13:delta_insert_by_delay	24	static
+scheduler.c:86:6:SCH_Init	16	static
+scheduler.c:106:6:SCH_Update	16	static
+scheduler.c:130:20:SCH_ErrorString	16	static
+scheduler.c:152:6:SCH_Report_Status	8	static
+scheduler.c:170:15:SCH_Add_Task	32	static
+scheduler.c:186:15:SCH_Delete_Task	24	static
+scheduler.c:197:6:SCH_Dispatch_Tasks	24	static
+scheduler.c:222:6:SCH_Go_To_Sleep	4	static,ignoring_inline_asm

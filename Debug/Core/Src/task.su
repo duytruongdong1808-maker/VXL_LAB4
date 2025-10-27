@@ -1,0 +1,7 @@
+task.c:7:6:UART_Print	16	static
+task.c:11:6:Task1	8	static
+task.c:17:6:Task2	8	static
+task.c:23:6:Task3	8	static
+task.c:29:6:Task4	8	static
+task.c:35:6:Task5	8	static
+task.c:40:6:LED_OneShot	8	static
