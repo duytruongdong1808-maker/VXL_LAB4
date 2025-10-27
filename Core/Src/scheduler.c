@@ -171,17 +171,23 @@ unsigned char SCH_Add_Task(void (*pFunction)(), unsigned int DELAY, unsigned int
     uint8_t idx = list_pop_free();
     if (idx == IDX_INVALID) {
         Error_code_G = ERROR_SCH_TOO_MANY_TASKS;
-        return SCH_MAX_TASKS; // no slot
+        return SCH_MAX_TASKS;
     }
 
     SCH_tasks_G[idx].pTask  = pFunction;
     SCH_tasks_G[idx].Period = PERIOD;
     SCH_tasks_G[idx].RunMe  = 0;
 
-    // Insert into delta list by requested start delay
-    delta_insert_by_delay(idx, DELAY);
+    if (DELAY == 0) {
+        SCH_tasks_G[idx].RunMe = 1;
+        ready_push(idx);
+    } else {
+        delta_insert_by_delay(idx, DELAY);
+    }
+
     return idx;
 }
+
 
 unsigned char SCH_Delete_Task(const unsigned char TASK_INDEX) {
     uint8_t idx = TASK_INDEX;

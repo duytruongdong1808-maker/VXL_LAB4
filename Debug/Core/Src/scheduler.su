@@ -8,6 +8,6 @@ scheduler.c:106:6:SCH_Update	16	static
 scheduler.c:130:20:SCH_ErrorString	16	static
 scheduler.c:152:6:SCH_Report_Status	8	static
 scheduler.c:170:15:SCH_Add_Task	32	static
-scheduler.c:186:15:SCH_Delete_Task	24	static
-scheduler.c:197:6:SCH_Dispatch_Tasks	24	static
-scheduler.c:222:6:SCH_Go_To_Sleep	4	static,ignoring_inline_asm
+scheduler.c:192:15:SCH_Delete_Task	24	static
+scheduler.c:203:6:SCH_Dispatch_Tasks	24	static
+scheduler.c:228:6:SCH_Go_To_Sleep	4	static,ignoring_inline_asm

@@ -10,6 +10,7 @@
 
 #include "main.h"
 
+void Task_PrintTimestamp(void);
 void Task1(void);
 void Task2(void);
 void Task3(void);

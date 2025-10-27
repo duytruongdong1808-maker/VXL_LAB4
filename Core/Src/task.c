@@ -1,11 +1,21 @@
 #include "main.h"
 #include "task.h"
 #include <string.h>
+#include <stdio.h>
 
 extern UART_HandleTypeDef huart1;
 
 void UART_Print(const char *msg) {
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+}
+
+void Task_PrintTimestamp(void) {
+    static uint32_t ms = 0;
+    char buf[64];
+
+    ms += 10;
+    sprintf(buf, "Current timestamp: %lu ms\r\n", ms);
+    UART_Print(buf);
 }
 
 void Task1(void) {
@@ -41,3 +51,4 @@ void LED_OneShot(void) {
     HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
     UART_Print("One shot task triggered\r\n");
 }
+

@@ -117,11 +117,12 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   SCH_Init();
+  SCH_Add_Task(Task_PrintTimestamp, 0, 1);
   SCH_Add_Task(Task1, 0, 50);   // 0.5 s
-  SCH_Add_Task(Task2, 1, 100);  // 1.0 s
-  SCH_Add_Task(Task3, 2, 150);  // 1.5 s
-  SCH_Add_Task(Task4, 3, 200);  // 2.0 s
-  SCH_Add_Task(Task5, 4, 250);  // 2.5 s
+  SCH_Add_Task(Task2, 0, 100);  // 1.0 s
+  SCH_Add_Task(Task3, 0, 150);  // 1.5 s
+  SCH_Add_Task(Task4, 0, 200);  // 2.0 s
+  SCH_Add_Task(Task5, 0, 250);  // 2.5 s
   SCH_Add_Task(LED_OneShot, 500, 0);
   HAL_TIM_Base_Start_IT(&htim2);
 //  SCH_Add_Task(Task_ButtonAndFSM, 0, 1);
@@ -228,7 +229,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 7999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 9;
+  htim2.Init.Period = 99;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
